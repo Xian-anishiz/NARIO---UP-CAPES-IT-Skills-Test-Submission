@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="form.html">Feedback</a>
+    </div>
+
+    <div id="feedback">
+        <h1>Feedback</h1>
+        <form id="myForm">
+            <div class="input-div">
+                <input type="text" id="name" placeholder="Name" required/>
+                <span id="name-error" class="alert"></span>
+            </div>
+
+            <div class="input-div">
+                <input type="text" id="email" placeholder="Email" required/>
+                <span id="email-error" class="alert"></span>
+            </div>
+            <div class="input-div">
+                <input type="text" id="subject" placeholder="Subject" required/>
+                <span id="subject-error" class="alert"></span>
+            </div>
+            <div class="input-div">
+                <textarea id="message" placeholder="Message" required></textarea>
+                <span id="message-error" class="alert"></span>
+            </div>
+            <div class="input-div">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById("myForm");
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            let isValid = true;
+
+            document.getElementById("name-error").textContent = "";
+            document.getElementById("email-error").textContent = "";
+            document.getElementById("subject-error").textContent = "";
+            document.getElementById("message-error").textContent = "";
+
+            if (/\d/.test(name)){
+                document.getElementById("name-error").textContent = 
+                    "Name cannot contain a number.";
+                isValid = false;
+            }
+
+            const emailRegex = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,})$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById("email-error").textContent = 
+                    "Invalid email address.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+            }
+        });
+    </script>
+</body>
+</html>
