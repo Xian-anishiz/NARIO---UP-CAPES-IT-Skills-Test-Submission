@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="feedback.html">Feedback</a>
+    </div>
+    
+    <hr>
+
+    <div id="header">
+        <h1 id="title">A list of Food Recipes</h1>
+        <img id="imageid">
+    </div>
+
+    <div id="main">
+        <p>Come with me and let's explore these dishes!</p>    
+        <ul>
+            <li><a href="?page=banana_bread">Banana Bread</a></li>
+            <li><a href="?page=fried_chicken">Fried Chicken</a></li>
+            <li><a href="?page=lasagna">Lasagna</a></li>
+            <li><a href="?page=pancakes">Pancakes</a></li>
+        </ul>
+    </div>
+    
+    
+    <div id="recipes">
+        <h4>Description</h4>
+        <p id="description"></p>
+
+        <h4>Ingredients</h4>
+        <ul id="ingredients"></ul>
+        
+        <h4>Steps</h4>
+        <ol id="steps"></ol>
+
+        <h4>Reference</h4>
+        <a id="reference"></a>
+    </div>
+
+    <script>
+        // Create variables for each recipe page
+        const home = {
+            title: "A list of Food Recipes",
+            source: "Assets/kitchen.jpg",
+            alt: "An image of a kitchen"
+        }
+        const recipes_page = {
+            banana_bread: {
+                title: "Banana Bread",
+                source: "Assets/banana_bread.jpg",
+                alt: "An image of banana bread",
+                description: "With its super-moist and buttery texture, banana and brown sugar flavors, soft crumb, and 1,000+ reviews, this is a delicious AND undeniably popular banana bread recipe. You need 4 large ripe bananas. This recipe is also in my cookbook, Sally’s Baking 101.",
+                ingredients: [
+                    "2 cups (250g) all-purpose flour (spooned & leveled)",
+                    "1 teaspoon baking soda",
+                    "1/4 teaspoon salt",
+                    "1/2 teaspoon ground cinnamon",
+                    "1/2 cup (8 Tbsp; 113g) unsalted butter, softened to room temperature",
+                    "3/4 cup (150g) packed light or dark brown sugar",
+                    "2 large eggs, at room temperature",
+                    "1 and 1/2 cups (345g) mashed bananas (about 3–4 ripe bananas)",
+                    "1/3 cup (80g) plain Greek yogurt or full-fat sour cream, at room temperature",
+                    "1 teaspoon pure vanilla extract",
+                    "optional: 3/4 cup (90g) chopped pecans or walnuts, or 1 cup (180g) semi-sweet chocolate chips",
+                ],
+                steps: [
+                    "Adjust the oven rack to the lower third position and preheat the oven to 350°F (177°C). Lowering the oven rack prevents the top of your bread from browning too much, too soon. Grease a 9×5-inch loaf pan with nonstick spray. Set aside.",
+                    "In a medium bowl, whisk the flour, baking soda, salt, and cinnamon together. Set aside.",
+                    "In a large bowl using a handheld or stand mixer fitted with a paddle attachment, beat the butter and brown sugar together on medium-high speed until light and creamy, about 3 minutes. (Here’s a helpful tutorial if you need guidance on how to cream butter and sugar.) With the mixer running on medium speed, add the eggs one at a time, beating well after each addition. Scrape down the sides of the bowl as needed. Beat in the mashed bananas, yogurt/sour cream, and vanilla until combined.",
+                    "Add the dry ingredients into the wet ingredients and beat on low speed just until combined. Do not over-mix. Fold in the nuts/chocolate chips, if using. The batter should be thick.",
+                    "Pour and spread the batter into the prepared baking pan. Bake for 60–65 minutes, making sure to loosely cover the pan with aluminum foil halfway through, to prevent the top from getting too brown. The bread is done when a toothpick inserted in the center comes out clean with only a few small moist crumbs. Cool the bread in the pan set on a cooling rack for 1 hour. Remove the bread from the pan and place it directly on the rack to cool completely before slicing and serving.",
+                    "Store wrapped tightly at room temperature for up to 3 days or in the refrigerator for up to 1 week. ",
+                ],
+                reference_desc: "My Favorite Banana Bread Recipe. Sally's Baking.",
+                reference_link: "https://sallysbakingaddiction.com/best-banana-bread-recipe/",
+            },
+            fried_chicken: {
+                title: "Fried Chicken",
+                source: "Assets/fried_chicken.jpg",
+                alt: "An image of fried chicken",
+                description: "Filipino Fried Chicken takes the familiar idea of fried chicken and gives it our own local twist. Instead of buttermilk or heavy breading, we use a marinade made with soy sauce, calamansi, and seasonings that soak into the meat to give it flavor from the inside out. The coating stays thin and crispy, made with flour and cornstarch that create a beautiful golden crust. It is not just food for the stomach; it is food for the soul. I still remember frying chicken in my small kitchen during my early years in Chicago. Even with the cold weather outside, the scent of soy and garlic always made the place feel like home.",
+                ingredients: [
+                    "Whole chicken",
+                    "Calamansi",
+                    "Soy sauce",
+                    "Ground black pepper",
+                    "Paprika",
+                    "Maggi Magic Sarap",
+                    "All purpose flour",
+                    "Cornstarch",
+                    "Garlic powder",
+                    "Onion powder",
+                    "Baking powder",
+                    "Cooking oil",
+                ],
+                steps: [
+                    "In a bowl, combine calamansi juice, soy sauce, ground black pepper, Maggi Magic Sarap, and paprika. Mix well. The marinade helps tenderize the chicken while infusing it with flavor.",
+                    "Place the butterflied whole chicken in a resealable bag and pour in the marinade. Remove excess air before sealing the bag to allow the marinade to coat the chicken evenly. Refrigerate for at least 1 hour to let the flavors absorb fully.",
+                    "In a separate bowl, combine flour, cornstarch, garlic powder, onion powder, and baking powder. Mix it thoroughly.",
+                    "Dredge the marinated chicken in the breading mixture, ensuring every part is covered. Shake off any excess flour to prevent clumping. Put the coated chicken on a plate and let it stay for 5 minutes before frying.",
+                    "Heat a good amount of cooking oil in a wok until it reaches 300°F. Carefully place the chicken in the hot oil and deep fry for 25 minutes, turning it halfway through to ensure even cooking. The high heat crisps the breading while sealing in the juices.",
+                    "Once fried, transfer the chicken to a wire rack to cool slightly. This step prevents excess oil from making the breading soggy. Serve on a plate with Filipino-style chicken gravy and enjoy a meal that is crispy, flavorful, and satisfying.",
+                ],
+                reference_desc: "Filipino Fried Chicken. Panlasang Pinoy",
+                reference_link: "https://panlasangpinoy.com/filipino-fried-chicken/",
+            },
+            lasagna: {
+                title: "Lasagna",
+                source: "Assets/lasagna.jpg",
+                alt: "An image of lasagna",
+                description: "This is a recipe for holiday lasagna. It is rich, tasty, and delicious.",
+                ingredients: [
+                    "1 lb. ground beef",
+                    "½ lb. ground Italian sausage",
+                    "1 piece Knorr Beef Cube",
+                    "12 pieces lasagna",
+                    "1 cup shredded Mozzarella cheese",
+                    "12 ounces Ricotta cheese",
+                    "¾ cup grated Parmesan cheese",
+                    "29 ounces diced tomato canned",
+                    "3 ounces tomato paste",
+                    "¾ cups water",
+                    "2 pieces yellow onion chopped",
+                    "3 tablespoons chopped parsley",
+                    "¼ cup chopped fresh basil",
+                    "1 teaspoon Italian seasoning",
+                    "3 cloves garlic minced",
+                    "3 tablespoons olive oil",
+                    "Salt ground black pepper, and sugar to taste",
+                ],
+                steps: [
+                    "Prepare the meat by heating olive oil in a pot. Add ground beef and ground Italian sausage. Cook until light brown.",
+                    "Add onion and garlic. Cook uncovered for 3 minutes.",
+                    "Pour-in diced tomato and water. Stir and let boil.",
+                    "Add Knorr Beef Cube. Stir, and add parsley, basil, and Italian seasoning. Cover and simmer for 40 minutes while stirring every 7 minutes.",
+                    "Add Tomato paste and season with sugar, salt, and ground black pepper. Set the meat sauce aside.",
+                    "Combine all the cheeses in a large bowl. Mix well.",
+                    "Preheat oven to 370F.",
+                    "Assemble the lasagna by pouring meat sauce on a baking pan. Make sure to evenly spread the sauce. Top with a layer of lasagna. Spread 1/3 of the cheese mixture over the lasagna and top with meat sauce. Arrange another layer of lasagna on top. Continue to do the same steps until all lasagna are consumed. Finally spread the cheese mixture on the topmost layer and add more Mozzarella cheese.",
+                    "Cover the baking pan with aluminum foil. Bake for 25 minutes. Remove the foil and continue to bake for 5 to 10 minutes.",
+                    "Serve. Share and enjoy!",
+                ],
+                reference_desc: "Christmas Lasagna Recipe. Panlasang Pinoy.",
+                reference_link: "https://panlasangpinoy.com/christmas-lasagna-recipe-easy-knr-bc/",
+            },
+            pancakes: {
+                title: "Pancakes",
+                source: "Assets/pancakes.jpg",
+                alt: "An image of pancakes",
+                description: "Perfect pancakes are easier to make than you think. This pancake recipe produces thick, fluffy, and all-around delicious pancakes with just a few ingredients that are probably already in your kitchen (and it's so much better than the boxed stuff).",
+                ingredients: [            
+                    "1 ½ cups all-purpose flour",
+                    "3 ½ teaspoons baking powder",
+                    "1 tablespoon white sugar",
+                    "¼ teaspoon salt, or more to taste",
+                    "1 ¼ cups milk",
+                    "3 tablespoons butter, melted",
+                    "1 large egg",
+                ],
+                steps: [
+                    "Gather all ingredients.",
+                    "Sift flour, baking powder, sugar, and salt together in a large bowl. Make a well in the center and add milk, melted butter, and egg; mix until smooth.",
+                    "Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes.",
+                    "Flip and cook until browned on the other side. Repeat with remaining batter.",
+                    "Serve and enjoy!"
+                ],
+                reference_desc: "Good Old-Fashioned Pancakes. allrecipes.",
+                reference_link: "https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/",
+            }
+        };
+
+        // Get the current active page, default to home
+        const requestedPage = new URLSearchParams(location.search).get("page");
+        const pageName = requestedPage || "home";
+        const page = recipes_page[pageName] || home;
+
+        // Hide div blocks depending on what page
+        const main = document.querySelector("#main");
+        const recipes = document.querySelector("#recipes");
+
+        main.hidden = pageName !== "home";
+        recipes.hidden = pageName === "home";
+
+        // Load the recipe page information
+        if (page) {
+            document.querySelector("#title").textContent = page.title;
+
+            const image = document.querySelector("#imageid");
+            image.src = page.source;
+            image.alt = page.alt;
+
+            document.querySelector("#description").textContent = page.description;
+
+            const ingredients = document.querySelector("#ingredients");
+            ingredients.replaceChildren();
+
+            page.ingredients.forEach(ingredient => {
+                const item = document.createElement("li");
+                item.textContent = ingredient;
+                ingredients.appendChild(item);
+            });
+
+            const steps = document.querySelector("#steps");
+            steps.replaceChildren();
+
+            page.steps.forEach(step => {
+                const item = document.createElement("li");
+                item.textContent = step;
+                steps.appendChild(item);
+            });
+
+            const reference = document.querySelector("#reference");
+            reference.textContent = page.reference_desc;
+            reference.href = page.reference_link;
+        }
+    </script>
+</body>
+</html>
